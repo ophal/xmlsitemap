@@ -81,6 +81,7 @@ function theme.xmlsitemap_index(variables)
   local content = variables.content or ''
   local output = '<?xml version="1.0" encoding="UTF-8"?>' .. content
 
+  header('status', 200)
   header('content-type', 'text/xml; charset=utf-8')
   header('content-length', (output or ''):len())
   return output
@@ -118,6 +119,7 @@ function theme.xmlsitemap(variables)
 
   output = output:concat()
 
+  header('status', 200)
   header('content-type', 'text/xml; charset=utf-8')
   header('content-length', (output or ''):len())
 
